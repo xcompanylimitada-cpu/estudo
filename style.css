@@ -14,7 +14,7 @@ body {
     width: 100%;
     min-height: 100vh;
     position: relative;
-    background-image: url('images/herodesktop.png');
+    background-image: url('images/herodesktop.webp');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -152,7 +152,7 @@ body {
 /* Responsividade Mobile - AJUSTADA */
 @media (max-width: 768px) {
     .hero-section {
-        background-image: url('images/heromobile.png');
+        background-image: url('images/heromobile.webp');
         background-position: top center; 
         background-size: 105%; /* Foto reduzida conforme pedido */
         background-repeat: no-repeat;
