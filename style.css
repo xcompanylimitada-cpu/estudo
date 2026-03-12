@@ -1,0 +1,982 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #050505;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+.hero-section {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background-image: url('images/herodesktop.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-bottom: 0; /* Ajustado */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Header/Logo */
+.logo {
+    width: 165px;
+    margin-bottom: 60px;
+}
+
+/* Tipografia */
+.main-title {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #FFFFFF;
+    font-size: 80px;
+    line-height: 0.95;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.typing-text {
+    color: #FE0149;
+    border-right: 3px solid #FE0149;
+    white-space: nowrap;
+}
+
+.description {
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 1.4;
+    opacity: 0.9;
+    margin-bottom: 40px;
+}
+
+/* Grid de Informações */
+.info-grid {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.info-item img {
+    width: 24px;
+    height: 24px;
+}
+
+.info-item span {
+    display: block;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.info-item strong {
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Botão com animação suave */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(90deg, #157126 0%, #34D137 100%);
+    color: white;
+    text-decoration: none;
+    padding: 18px 35px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 20px;
+    border: 1px solid #65FF68;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 209, 55, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(52, 209, 55, 0.5);
+}
+
+.btn-icon {
+    width: 15px;
+}
+
+/* --- FAIXA ROSA AJUSTADA --- */
+.ticker-wrap {
+    position: relative; /* MUDANÇA: Sai o fixed, entra o relative */
+    margin-top: 50px;    /* DISTÂNCIA: Isso coloca ela abaixo do botão */
+    width: 100%;
+    overflow: hidden;
+    background-color: #FE0149;
+    padding: 12px 0;
+    z-index: 100;
+}
+
+.ticker {
+    display: flex;
+    white-space: nowrap;
+    animation: ticker 20s linear infinite;
+}
+
+.ticker__item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+@keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Responsividade Mobile - AJUSTADA */
+@media (max-width: 768px) {
+    .hero-section {
+        background-image: url('images/heromobile.png');
+        background-position: top center; 
+        background-size: 105%; /* Foto reduzida conforme pedido */
+        background-repeat: no-repeat;
+        text-align: center;
+        padding-top: 10px;
+        display: block; 
+        min-height: auto; 
+    }
+
+    .container {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        min-height: auto; 
+    }
+
+    .header {
+        display: flex;
+        justify-content: flex-start; 
+        margin-bottom: 320px; /* Mantém o rosto do Roberth livre */
+    }
+
+    .logo {
+        width: 70px; 
+        margin-bottom: 0;
+    }
+
+    .hero-content {
+        margin-top: 0; 
+        padding-bottom: 10px; /* REDUZIDO: Diminuído para a faixa subir */
+    }
+
+    .main-title {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 34px; 
+        line-height: 0.95;
+        margin-bottom: 12px;
+        color: #FFFFFF;
+    }
+
+    .description {
+        font-size: 10px; 
+        max-width: 260px;
+        margin: 0 auto 20px;
+        line-height: 1.3;
+        color: #FFFFFF;
+    }
+
+    .info-grid {
+        display: flex;
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .info-item img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .info-item span, 
+    .info-item strong {
+        font-size: 9px; 
+        color: #FFFFFF;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .cta-button {
+        display: inline-flex;
+        width: 100%;
+        max-width: 260px;
+        font-size: 11px;
+        padding: 14px 18px;
+        justify-content: center;
+        margin: 0 auto;
+        text-decoration: none;
+        background: linear-gradient(90deg, #157126 0%, #34D137 100%);
+        border-radius: 12px;
+        color: #FFFFFF;
+        font-weight: 600;
+    }
+
+    /* FAIXA ROSA AJUSTADA PARA SUBIR MAIS */
+    .ticker-wrap {
+        position: relative; 
+        bottom: auto;
+        margin-top: 10px; /* REDUZIDO: De 30px para 10px para ela subir mais */
+        padding: 10px 0;
+        background-color: #FE0149;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .ticker__item {
+        font-size: 10px; 
+        gap: 8px;
+        color: #FFFFFF;
+        font-weight: 700;
+    }
+}
+/* --- SEÇÃO COMPARAÇÃO --- */
+.section-comparison {
+    background-color: #121212; 
+    padding: 100px 20px 0px 20px; /* Padding bottom 0 para a divisória colar no chão */
+    width: 100%;
+    position: relative; /* Necessário para a divisória */
+}
+
+.container-comparison {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: flex-start;
+    padding-bottom: 80px; /* Espaço antes da divisória */
+}
+
+/* ... Seus estilos de texto, cards e botões permanecem iguais ... */
+
+.comparison-title { font-family: 'Alibaba Sans', sans-serif; color: #FFFFFF; font-size: 52px; line-height: 1; margin-bottom: 40px; font-weight: 400; }
+.comparison-title span { font-weight: 700; }
+.comparison-title .highlight { color: #FE0149; }
+.comparison-description { font-family: 'Alibaba Sans', sans-serif; color: #FFFFFF; font-size: 28px; line-height: 1.2; opacity: 0.9; margin-bottom: 60px; }
+.cta-button-comparison { display: inline-flex; align-items: center; gap: 15px; background: linear-gradient(90deg, #157126 0%, #34D137 100%); color: white; text-decoration: none; padding: 20px 40px; border-radius: 15px; font-weight: 600; font-size: 24px; border: 1px solid #65FF68; transition: transform 0.3s ease; }
+.comparison-cards { display: flex; flex-direction: column; gap: 20px; }
+.card { padding: 25px; border-radius: 4px; font-family: 'Alibaba Sans', sans-serif; min-height: 130px; }
+.card h3 { font-size: 22px; margin-bottom: 15px; font-weight: 400; color: #FFFFFF; }
+.card p { font-size: 20px; line-height: 1.3; color: #FFFFFF; opacity: 0.9; }
+.card-before { background: rgba(255, 0, 0, 0.1); border: 1.2px solid #FF0000; }
+.card-now { background: rgba(101, 255, 104, 0.1); border: 1.2px solid #65FF68; }
+
+/* === CSS DA DIVISÓRIA NO FINAL DA S2 === */
+.divider-end-s2 {
+    position: absolute;
+    bottom: 0; /* Cola no chão da Seção 2 */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    z-index: 100;
+}
+
+.divider-line-s2 {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(254,1,73,0) 0%, #FE0149 50%, rgba(254,1,73,0) 100%);
+}
+
+.divider-icon-s2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: auto;
+    z-index: 101;
+}
+
+/* --- MOBILE --- */
+@media (max-width: 768px) {
+    .section-comparison { padding: 60px 20px 0px; }
+    .container-comparison { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; padding-bottom: 60px; }
+    .comparison-title { font-size: 26px; }
+    .comparison-description { font-size: 14px; max-width: 320px; }
+    .comparison-cards { width: 100%; max-width: 340px; }
+    .card h3 { font-size: 14px; }
+    .card p { font-size: 13px; }
+    .cta-button-comparison { font-size: 16px; padding: 14px 20px; }
+    
+    .divider-icon-s2 { width: 44px; }
+}
+/* --- SEÇÃO 3 --- */
+.section-3 {
+    background-color: #090909;
+    width: 100%;
+    position: relative;
+    padding-top: 60px; /* Espaço para a seta não cobrir o texto */
+    padding-bottom: 80px;
+    overflow: hidden;
+}
+
+/* --- DIVISÓRIA (Ajuste Definitivo) --- */
+.divider-main-s3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Altura da linha */
+    z-index: 100;
+}
+
+.divider-line-s3 {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(254,1,73,0) 0%, #FE0149 50%, rgba(254,1,73,0) 100%);
+}
+
+.divider-circle-s3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza exato no meio da linha */
+    width: 56px;
+    height: 56px;
+    z-index: 101;
+}
+
+/* --- CONTEÚDO --- */
+.container-s3 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px 0 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.content-s3 {
+    max-width: 650px;
+}
+
+.title-s3 {
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    font-family: 'Alibaba Sans', sans-serif;
+}
+
+.title-s3 .highlight-s3 {
+    color: #FE0149;
+    font-weight: 700;
+}
+
+.info-s3 p, .info-s3 li {
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1.4;
+    font-family: 'Alibaba Sans', sans-serif;
+}
+
+.list-dots-s3 {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.list-dots-s3 li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.list-dots-s3 li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+}
+
+.condition-text-s3 {
+    margin-top: 40px !important;
+    margin-bottom: 15px !important;
+}
+
+.list-check-s3 {
+    list-style: none;
+    padding: 0;
+}
+
+.list-check-s3 li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.list-check-s3 li img {
+    width: 22px;
+}
+
+/* --- CIFRÃO --- */
+.bg-dollar-s3 {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.bg-dollar-s3 img {
+    height: 650px;
+    opacity: 0.5;
+}
+
+/* --- MOBILE --- */
+@media (max-width: 768px) {
+    .divider-circle-s3 {
+        width: 44px;
+        height: 44px;
+    }
+
+    .container-s3 {
+        padding: 40px 25px 0 25px;
+    }
+
+    .title-s3 {
+        font-size: 32px;
+    }
+
+    .info-s3 p, .info-s3 li {
+        font-size: 18px;
+    }
+
+    .bg-dollar-s3 img {
+        height: 400px;
+    }
+}
+/* =========================================
+   SEÇÃO 4 - APRENDIZADO (COM DIVISÓRIAS)
+   ========================================= */
+
+.section-learning {
+    background-color: #090909; /* Conforme design desktop */
+    width: 100%;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Estilo das Linhas Divisórias (Início e Fim) */
+.divider-line-s4 {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    /* Degradê baseado nas cores das seções anteriores */
+    background: linear-gradient(90deg, rgba(254,1,73,0) 0%, #FE0149 50%, rgba(254,1,73,0) 100%);
+    z-index: 10;
+}
+
+.divider-line-s4.top {
+    top: 0;
+}
+
+.divider-line-s4.bottom {
+    bottom: 0;
+}
+
+.container-learning {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Título com medidas baseadas no seu figma */
+.learning-title {
+    font-family: 'Alibaba Sans', sans-serif;
+    color: #ffffff;
+    font-size: 62px;
+    line-height: 1.1;
+    font-weight: 400;
+    margin-bottom: 80px;
+}
+
+.learning-title .highlight-s4 {
+    color: #FE0149; /* Rosa do destaque */
+    font-weight: 700;
+}
+
+/* Grid de Cards conforme imagem */
+.learning-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px; /* Linha divisória interna */
+    background-color: #333333;
+    border: 1px solid #333333;
+}
+
+.learning-card {
+    background-color: #1E1E1E; /* Cinza escuro dos cards */
+    padding: 60px 40px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tag Módulo */
+.module-tag {
+    color: #ffffff;
+    font-family: 'Alibaba Sans', sans-serif;
+    font-size: 20px;
+    padding: 8px 18px;
+    border: 1px solid #FE0149;
+    width: fit-content;
+    margin-bottom: 30px;
+}
+
+.learning-card h3 {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.learning-card p {
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE COMPACTO)
+   ========================================= */
+
+@media (max-width: 768px) {
+    .section-learning {
+        padding: 50px 15px; /* Reduzi o respiro da seção */
+    }
+
+    .learning-title {
+        font-size: 28px; /* Título mais assertivo */
+        margin-bottom: 30px;
+        line-height: 1.2;
+    }
+
+    .learning-grid {
+        grid-template-columns: 1fr;
+        gap: 12px; /* Espaço menor entre os cards */
+        background-color: transparent;
+        border: none;
+    }
+
+    .learning-card {
+        padding: 20px 20px; /* Card mais "magro" */
+        border: 1px solid #333333;
+        border-radius: 8px; /* Leve arredondamento para suavizar */
+    }
+
+    .module-tag {
+        font-size: 13px; /* Tag bem pequena e discreta */
+        padding: 4px 10px;
+        margin-bottom: 15px;
+        border-width: 0.5px;
+    }
+
+    .learning-card h3 {
+        font-size: 18px; /* Chamada do módulo menor */
+        margin-bottom: 8px;
+    }
+
+    .learning-card p {
+        font-size: 14px; /* Texto de apoio mais lido em telas pequenas */
+        line-height: 1.3;
+        opacity: 0.8;
+    }
+
+    /* Ajuste da divisória para não ficar grosseira no mobile */
+    .divider-line-s4 {
+        height: 1px;
+    }
+}
+/* =========================================
+   SEÇÃO 5 - CRONOGRAMA (VERSÃO COMPACTA)
+   ========================================= */
+
+.section-schedule {
+    background-color: #090909;
+    width: 100%;
+    padding: 60px 20px; /* Reduzi de 100px para 60px */
+    position: relative;
+}
+
+.top-line-s5 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #FE0149 0%, #8B0128 100%);
+}
+
+.container-schedule {
+    max-width: 900px; /* Reduzi de 1100px para 900px para ficar mais centralizado */
+    margin: 0 auto;
+}
+
+.header-schedule {
+    text-align: center;
+    margin-bottom: 40px; /* Reduzi de 60px para 40px */
+}
+
+.subtitle-schedule {
+    color: #FE0149;
+    font-family: 'Alibaba Sans', sans-serif;
+    font-size: 24px; /* Reduzi de 38px para 24px */
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.main-date-schedule {
+    color: #ffffff;
+    font-family: 'Alibaba Sans', sans-serif;
+    font-size: 54px; /* Reduzi de 83px para 54px */
+    font-weight: 700;
+    line-height: 1;
+}
+
+.timeline-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Itens mais próximos */
+}
+
+/* O Retângulo do Item mais baixo */
+.schedule-item {
+    display: flex;
+    align-items: center;
+    background-color: #1E1E1E;
+    width: 100%;
+    min-height: 80px; /* Reduzi de 125px para 80px */
+    border-left: 4px solid #FE0149; 
+}
+
+/* Espaço do Horário reduzido */
+.time-box {
+    width: 120px; /* Reduzi de 160px para 120px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FE0149;
+    font-family: 'Alibaba Sans', sans-serif;
+    font-size: 22px; /* Reduzi de 32px para 22px */
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.text-box {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-box h3 {
+    color: #ffffff;
+    font-family: 'Alibaba Sans', sans-serif;
+    font-size: 20px; /* Reduzi de 32px para 20px */
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.text-box p {
+    color: #A8A8A8;
+    font-family: 'Alibaba Sans', sans-serif;
+    font-size: 18px; /* Reduzi de 30px para 18px */
+    font-weight: 400;
+}
+
+/* =========================================
+   RESPONSIVIDADE SEÇÃO 5 (MOBILE MANTIDO)
+   ========================================= */
+
+@media (max-width: 768px) {
+    .section-schedule {
+        padding: 40px 15px;
+    }
+
+    .header-schedule {
+        margin-bottom: 25px;
+    }
+
+    .subtitle-schedule {
+        font-size: 16px;
+    }
+
+    .main-date-schedule {
+        font-size: 32px;
+    }
+
+    .timeline-wrapper {
+        gap: 8px;
+    }
+
+    .schedule-item {
+        min-height: 65px;
+        border-left-width: 3px;
+    }
+
+    .time-box {
+        width: 65px;
+        font-size: 15px;
+    }
+
+    .text-box h3 {
+        font-size: 14px;
+    }
+
+    .text-box p {
+        font-size: 12px;
+    }
+}
+/* =========================================
+   SEÇÃO 6 - ATENÇÃO (VERSÃO COMPACTA DESKTOP)
+   ========================================= */
+
+.section-attention {
+    background-color: #FE0149;
+    width: 100%;
+    padding: 60px 20px; /* Reduzi de 100px para 60px */
+    position: relative;
+    text-align: center;
+}
+
+.top-line-s6 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(177deg, #FE0149 0%, #8B0128 100%);
+}
+
+.container-attention {
+    max-width: 850px; /* Estreitei o container para o texto não espalhar tanto */
+    margin: 0 auto;
+}
+
+.title-attention {
+    color: #ffffff;
+    font-family: 'Alibaba Sans', sans-serif;
+    font-size: 54px; /* Reduzi de 83px para 54px */
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 25px; /* Reduzi o espaço para o texto */
+}
+
+.content-attention p {
+    color: #ffffff;
+    font-family: 'Alibaba Sans', sans-serif;
+    font-size: 22px; /* Reduzi de 31px para 22px */
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.content-attention p:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================================
+   RESPONSIVIDADE SEÇÃO 6 (MOBILE MANTIDO)
+   ========================================= */
+
+@media (max-width: 768px) {
+    .section-attention {
+        padding: 35px 15px; /* Ajuste fino para ficar ainda mais enxuto */
+    }
+
+    .title-attention {
+        font-size: 28px; /* Pequeno ajuste para harmonia */
+        margin-bottom: 12px;
+    }
+
+    .content-attention p {
+        font-size: 14px;
+        line-height: 1.3;
+        margin-bottom: 10px;
+    }
+
+    .content-attention br {
+        display: none;
+    }
+}
+/* =========================================
+   SEÇÃO 7 - GARANTA SEU ACESSO (VERSÃO COMPACTA)
+   ========================================= */
+
+.section-access {
+    background-color: #090909;
+    padding: 60px 20px 40px; /* Reduzi o padding superior de 100px para 60px */
+    text-align: center;
+    width: 100%;
+}
+
+.container-access {
+    max-width: 900px; /* Reduzi de 1100px para 900px */
+    margin: 0 auto;
+}
+
+.top-tag {
+    color: #65FF68;
+    font-family: 'Alibaba Sans', sans-serif;
+    font-size: 24px; /* Reduzi de 38px para 24px */
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.main-title-access {
+    color: #ffffff;
+    font-family: 'Alibaba Sans', sans-serif;
+    font-size: 54px; /* Reduzi de 83px para 54px */
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.description-access {
+    color: #ffffff;
+    font-family: 'Alibaba Sans', sans-serif;
+    font-size: 22px; /* Reduzi de 36px para 22px */
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 40px;
+}
+
+/* Layout dos Cards de Preço mais baixos */
+.pricing-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.price-card {
+    flex: 1;
+    max-width: 400px;
+    height: 180px; /* Reduzi drasticamente de 284px para 180px */
+    background: rgba(65, 65, 65, 0.30);
+    border: 1px solid #585858;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.status-lote {
+    font-family: 'Alibaba Sans', sans-serif;
+    font-size: 18px; /* Reduzi de 32px para 18px */
+}
+
+.available { color: #65FF68; }
+.soon { color: #807E7E; }
+
+.price-value {
+    font-family: 'Alibaba Sans', sans-serif;
+    font-size: 80px; /* Reduzi de 158px para 80px */
+    font-weight: 700;
+    line-height: 1;
+}
+
+.active-card .price-value { color: #ffffff; }
+.disabled-card .price-value { color: #4A4A4A; }
+
+.info-lote {
+    color: #807E7E;
+    font-size: 14px; /* Reduzi de 24px para 14px */
+    font-family: 'Alibaba Sans', sans-serif;
+}
+
+/* Botão Redimensionado */
+.btn-participar-s7 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(90deg, #157126 0%, #34D137 100%);
+    border: 1px solid #65FF68;
+    border-radius: 12px; /* Deixei o arredondamento mais sutil */
+    color: white;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px; /* Reduzi de 29px para 18px */
+    font-weight: 600;
+    padding: 15px 40px; /* Menos preenchimento no botão */
+    transition: transform 0.3s;
+    margin-bottom: 40px;
+}
+
+.btn-icon {
+    width: 18px; /* Ícone menor para acompanhar o texto */
+    height: auto;
+}
+
+/* Footer e Detalhes Finais mais discretos */
+.event-details-footer {
+    color: white;
+    font-family: 'Alibaba Sans', sans-serif;
+    font-size: 18px; /* Reduzi de 27px para 18px */
+    line-height: 1.4;
+    margin-bottom: 60px;
+}
+
+.footer-rights {
+    color: #7D7D7D;
+    font-family: 'Alibaba Sans', sans-serif;
+    font-size: 14px; /* Reduzi de 27px para 14px */
+}
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE MANTIDO COMPACTO)
+   ========================================= */
+
+@media (max-width: 768px) {
+    .section-access { padding: 40px 15px 30px; }
+    .top-tag { font-size: 15px; }
+    .main-title-access { font-size: 32px; }
+    .description-access { font-size: 14px; }
+    .price-card { height: 130px; }
+    .status-lote { font-size: 14px; }
+    .price-value { font-size: 50px; }
+    .btn-participar-s7 { font-size: 16px; width: 100%; max-width: 280px; }
+    .event-details-footer { font-size: 14px; }
+    .footer-rights { font-size: 11px; }
+}
